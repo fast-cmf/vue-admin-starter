@@ -62,7 +62,7 @@ composer dev
 ### 方式二：Composer create-project
 
 ```bash
-composer create-project bluebear/vue-admin-starter your-project
+composer create-project fast-cmf/vue-admin-starter your-project
 cd your-project
 php artisan app:install
 composer dev

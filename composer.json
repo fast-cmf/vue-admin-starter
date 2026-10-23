@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "bluebear/vue-admin-starter",
+    "name": "fast-cmf/vue-admin-starter",
     "type": "project",
     "description": "Laravel 13 + Vue 3 后台管理启动模板：RBAC 权限、菜单管理、媒体中心、操作日志开箱即用。",
     "keywords": [
