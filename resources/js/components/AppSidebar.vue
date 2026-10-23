@@ -27,7 +27,7 @@ const menus = computed<SidebarMenuNode[]>(() => page.props.menus ?? []);
 const footerNavItems: NavItem[] = [
     {
         title: "代码仓库",
-        href: "https://github.com/laravel/vue-starter-kit",
+        href: "https://github.com/fast-cmf/vue-admin-starter",
         icon: FolderGit2,
     },
     {

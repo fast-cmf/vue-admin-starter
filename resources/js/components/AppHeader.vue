@@ -72,7 +72,7 @@ const mainNavItems: NavItem[] = [
 const rightNavItems: NavItem[] = [
     {
         title: "代码仓库",
-        href: "https://github.com/laravel/vue-starter-kit",
+        href: "https://github.com/fast-cmf/vue-admin-starter",
         icon: Folder,
     },
     {
