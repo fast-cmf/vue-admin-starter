@@ -2,6 +2,7 @@
 
 namespace App\Settings;
 
+use App\Settings\Concerns\SafeOperations;
 use Spatie\LaravelSettings\Attributes\ShouldBeEncrypted;
 use Spatie\LaravelSettings\Settings;
 
@@ -10,6 +11,8 @@ use Spatie\LaravelSettings\Settings;
  */
 class MailSettings extends Settings
 {
+    use SafeOperations;
+
     /** 是否启用自定义 SMTP 发信（关闭时使用框架默认 mail 配置） */
     public bool $enabled = false;
 

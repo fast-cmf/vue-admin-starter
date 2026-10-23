@@ -2,6 +2,7 @@
 
 namespace App\Settings;
 
+use App\Settings\Concerns\SafeOperations;
 use Spatie\LaravelSettings\Attributes\ShouldBeEncrypted;
 use Spatie\LaravelSettings\Settings;
 
@@ -10,6 +11,8 @@ use Spatie\LaravelSettings\Settings;
  */
 class StorageSettings extends Settings
 {
+    use SafeOperations;
+
     /**
      * 媒体存储磁盘：local 使用本地 public 磁盘，oss 使用 S3 兼容对象存储
      */

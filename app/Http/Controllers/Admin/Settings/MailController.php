@@ -22,6 +22,9 @@ class MailController extends Controller
      */
     public function edit(MailSettings $settings): Response
     {
+        // 加载失败（如 APP_KEY 变更导致解密异常）时回退默认值，避免整页 500
+        $settings->loadSafely();
+
         return Inertia::render('admin/settings/Mail', [
             'mail' => [
                 'enabled' => $settings->enabled,
@@ -41,6 +44,9 @@ class MailController extends Controller
      */
     public function update(MailUpdateRequest $request, MailSettings $settings): RedirectResponse
     {
+        // 解密异常（如 APP_KEY 变更）时回退默认值，避免 fill 懒加载时抛出 500
+        $settings->loadSafely();
+
         $data = $request->validated();
 
         if (($data['smtp_password'] ?? '') === '') {
@@ -50,7 +56,8 @@ class MailController extends Controller
         // 未提交 / 为空的加密方式回落默认 TLS
         $data['smtp_encryption'] = $data['smtp_encryption'] ?? 'tls';
 
-        $settings->fill($data)->save();
+        // 保存后剔除与默认值相同的属性行，仅保留用户显式修改过的配置
+        $settings->fill($data)->saveWithoutDefaults();
 
         // 让本次请求的后续操作立即使用新配置
         $this->applyRuntimeConfig($settings);
@@ -65,6 +72,9 @@ class MailController extends Controller
      */
     public function sendTest(Request $request, MailSettings $settings): RedirectResponse
     {
+        // 加载失败时回退默认值，避免解密异常导致 500
+        $settings->loadSafely();
+
         $validated = $request->validate([
             'test_email' => ['required', 'email'],
         ]);
