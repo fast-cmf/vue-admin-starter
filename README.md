@@ -1,6 +1,6 @@
 # Vue Admin Starter
 
-基于 Laravel 13 + Vue 3 的中后台管理启动模板，参照 [laravel/vue-starter-kit](https://github.com/laravel/vue-starter-kit) 的技术选型，内置一套完整的中后台基础设施，开箱即用。
+
 
 ## 功能特性
 
