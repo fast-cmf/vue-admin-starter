@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" preserveAspectRatio="xMidYMid slice">
+  <!-- 蓝贝熊登录页整栏插画：浅色天空场景，宝蓝小熊坐山丘挥手（关键元素集中于中段安全区） -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DCEBFD"/>
+      <stop offset="0.55" stop-color="#EDF5FF"/>
+      <stop offset="1" stop-color="#FDFEFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="900" fill="url(#sky)"/>
+
+  <!-- 太阳（右上，暖色点缀） -->
+  <circle cx="612" cy="252" r="76" fill="#FFC94D" opacity="0.18"/>
+  <circle cx="612" cy="252" r="48" fill="#FFC94D"/>
+
+  <!-- 云朵：散布全栏 -->
+  <g fill="#FFFFFF">
+    <g opacity="0.9">
+      <circle cx="112" cy="152" r="24"/>
+      <circle cx="146" cy="142" r="30"/>
+      <circle cx="182" cy="154" r="22"/>
+      <rect x="96" y="146" width="108" height="26" rx="13"/>
+    </g>
+    <g opacity="0.75">
+      <circle cx="344" cy="112" r="18"/>
+      <circle cx="372" cy="105" r="24"/>
+      <circle cx="400" cy="114" r="16"/>
+      <rect x="332" y="108" width="84" height="20" rx="10"/>
+    </g>
+    <g opacity="0.8">
+      <circle cx="628" cy="392" r="16"/>
+      <circle cx="652" cy="385" r="21"/>
+      <circle cx="676" cy="393" r="14"/>
+      <rect x="616" y="388" width="76" height="18" rx="9"/>
+    </g>
+    <g opacity="0.6">
+      <circle cx="256" cy="470" r="14"/>
+      <circle cx="278" cy="464" r="18"/>
+      <circle cx="300" cy="471" r="12"/>
+      <rect x="246" y="466" width="68" height="16" rx="8"/>
+    </g>
+  </g>
+
+  <!-- 飞鸟 -->
+  <path d="M252 216 Q262 206 272 216 M272 216 Q282 206 292 216" fill="none" stroke="#1B2A4A" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  <path d="M310 262 Q318 254 326 262 M326 262 Q334 254 342 262" fill="none" stroke="#1B2A4A" stroke-width="3.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- 闪光与装饰 -->
+  <path d="M310 586 L314 598 L326 602 L314 606 L310 618 L306 606 L294 602 L306 598 Z" fill="#1A6EF4" opacity="0.3"/>
+  <path d="M86 560 L89 569 L98 572 L89 575 L86 584 L83 575 L74 572 L83 569 Z" fill="#1A6EF4" opacity="0.25"/>
+  <path d="M352 340 h14 M359 333 v14" stroke="#1A6EF4" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+  <circle cx="70" cy="430" r="8" fill="none" stroke="#1A6EF4" stroke-width="4" opacity="0.25"/>
+
+  <!-- 安全盾牌（左上） -->
+  <g>
+    <path d="M148 266 L212 290 V358 Q212 408 148 434 Q84 408 84 358 V290 Z" fill="#FFFFFF"/>
+    <path d="M122 352 L142 374 L176 322" fill="none" stroke="#1A6EF4" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 用户信息卡片（左中） -->
+  <g>
+    <rect x="86" y="492" width="176" height="106" rx="16" fill="#FFFFFF"/>
+    <circle cx="122" cy="532" r="19" fill="#A6CEF6"/>
+    <circle cx="122" cy="526" r="7" fill="#1A6EF4"/>
+    <path d="M110 542 Q122 530 134 542 Z" fill="#1A6EF4"/>
+    <rect x="154" y="514" width="80" height="10" rx="5" fill="#1A6EF4"/>
+    <rect x="154" y="533" width="58" height="9" rx="4.5" fill="#D6E5FB"/>
+    <rect x="104" y="570" width="132" height="9" rx="4.5" fill="#D6E5FB"/>
+  </g>
+
+  <!-- 锁形徽章（卡片右下） -->
+  <g>
+    <path d="M286 632 v-10 a15 15 0 0 1 30 0 v10" fill="none" stroke="#F5A623" stroke-width="7"/>
+    <rect x="278" y="632" width="46" height="35" rx="9" fill="#F5A623"/>
+    <circle cx="301" cy="646" r="5" fill="#FFFFFF"/>
+    <rect x="298.5" y="648" width="5" height="10" rx="2.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 山丘 -->
+  <ellipse cx="160" cy="910" rx="430" ry="270" fill="#D6E5FB"/>
+  <ellipse cx="570" cy="930" rx="450" ry="290" fill="#C3DBFA"/>
+
+  <!-- 小熊（坐在右侧山丘高处，挥手打招呼；整体上移避开底部文案） -->
+  <g transform="translate(0,-30)">
+  <!-- 左臂挥手 -->
+  <path d="M462 555 Q418 520 408 475" fill="none" stroke="#1A6EF4" stroke-width="25" stroke-linecap="round"/>
+  <circle cx="406" cy="467" r="15" fill="#1A6EF4"/>
+  <path d="M378 442 Q364 462 374 484" fill="none" stroke="#1A6EF4" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+  <path d="M356 428 Q336 458 348 488" fill="none" stroke="#1A6EF4" stroke-width="5" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- 耳朵 -->
+  <circle cx="458" cy="402" r="26" fill="#1A6EF4"/>
+  <circle cx="458" cy="402" r="12" fill="#A6CEF6"/>
+  <circle cx="582" cy="402" r="26" fill="#1A6EF4"/>
+  <circle cx="582" cy="402" r="12" fill="#A6CEF6"/>
+
+  <!-- 身体（小而圆，头身比更 Q） -->
+  <rect x="458" y="528" width="124" height="130" rx="62" fill="#1A6EF4"/>
+  <ellipse cx="520" cy="600" rx="42" ry="46" fill="#4D8BFF"/>
+  <!-- 右臂下垂 -->
+  <ellipse cx="594" cy="578" rx="22" ry="34" fill="#1A6EF4" transform="rotate(-18 594 578)"/>
+  <!-- 脚 -->
+  <ellipse cx="488" cy="654" rx="24" ry="14" fill="#1554C0"/>
+  <ellipse cx="552" cy="654" rx="24" ry="14" fill="#1554C0"/>
+
+  <!-- 头部（大圆头） -->
+  <circle cx="520" cy="470" r="78" fill="#1A6EF4"/>
+
+  <!-- 五官 -->
+  <ellipse cx="492" cy="460" rx="6" ry="8" fill="#12264D"/>
+  <ellipse cx="548" cy="460" rx="6" ry="8" fill="#12264D"/>
+  <circle cx="490" cy="457" r="2" fill="#FFFFFF"/>
+  <circle cx="546" cy="457" r="2" fill="#FFFFFF"/>
+  <!-- 腮红 -->
+  <ellipse cx="470" cy="494" rx="11" ry="6.5" fill="#7FB0F8" opacity="0.7"/>
+  <ellipse cx="570" cy="494" rx="11" ry="6.5" fill="#7FB0F8" opacity="0.7"/>
+  <!-- 口鼻 -->
+  <ellipse cx="520" cy="498" rx="30" ry="23" fill="#FFFFFF"/>
+  <ellipse cx="520" cy="488" rx="7.5" ry="5.5" fill="#12264D"/>
+  <path d="M507 501 Q520 512 533 501" stroke="#12264D" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
