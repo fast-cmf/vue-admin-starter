@@ -24,7 +24,29 @@
 
 ## 安装
 
-### 方式一：Use this template（推荐）
+### 方式一：Laravel 安装器（推荐）
+
+使用 [Laravel 安装器](https://laravel.com/docs/installation)（`laravel/installer` >= 5.7）从模板创建项目，会自动完成依赖安装、密钥生成与数据库迁移：
+
+```bash
+laravel new your-project --using=fast-cmf/vue-admin-starter
+cd your-project
+```
+
+然后创建首个超级管理员并启动：
+
+```bash
+php artisan app:install
+composer dev
+```
+
+也可以非交互执行：
+
+```bash
+php artisan app:install --name=管理员 --email=admin@example.com --password=你的密码
+```
+
+### 方式二：Use this template
 
 1. 点击仓库右上角 **Use this template** 创建你的项目
 2. 克隆到本地后执行：
@@ -59,7 +81,7 @@ composer dev
 
 访问 `http://localhost:8000/admin/login` 使用安装时创建的账号登录。
 
-### 方式二：Composer create-project
+### 方式三：Composer create-project
 
 ```bash
 composer create-project fast-cmf/vue-admin-starter your-project
