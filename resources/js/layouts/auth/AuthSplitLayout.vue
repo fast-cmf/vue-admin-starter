@@ -21,7 +21,7 @@ defineProps<{
         >
             <!-- 整栏插画：铺满左侧面板 -->
             <img
-                src="/images/login-illustration.svg"
+                src="/images/login-illustration-v4.png?v=4"
                 alt="蓝贝熊管理后台插画"
                 class="absolute inset-0 h-full w-full object-cover"
                 loading="eager"
@@ -37,21 +37,21 @@ defineProps<{
                 {{ name }}
             </Link>
 
-            <!-- 品牌文案：压在山丘上 -->
+            <!-- 品牌文案：压在插画底部留白区 -->
             <div
-                class="absolute inset-x-0 bottom-20 z-20 px-10 text-center"
+                class="absolute inset-x-0 bottom-16 z-20 px-10 text-center"
             >
                 <h2 class="text-2xl font-semibold tracking-tight text-foreground">
                     让站点管理，回归轻松
                 </h2>
                 <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    内容、媒体与系统配置一站管理，简洁、安全、现代化。
+                    内容、媒体与系统设置统一管理，简洁、安全、现代化。
                 </p>
             </div>
 
             <!-- 底部信息 -->
-            <p class="absolute inset-x-0 bottom-6 z-20 text-center text-xs text-muted-foreground">
-                © {{ new Date().getFullYear() }} {{ name }} · 简单可靠的站点管理后台
+            <p class="absolute inset-x-0 bottom-5 z-20 text-center text-xs text-muted-foreground">
+                © {{ new Date().getFullYear() }} {{ name }} · 高可用的站点管理框架
             </p>
         </div>
         <div class="lg:p-8">
@@ -59,7 +59,7 @@ defineProps<{
                 class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]"
             >
                 <div class="flex flex-col space-y-2 text-center">
-                    <h1 class="text-xl font-medium tracking-tight" v-if="title">
+                    <h1 class="text-xl font-semibold tracking-tight" v-if="title">
                         {{ title }}
                     </h1>
                     <p class="text-sm text-muted-foreground" v-if="description">
