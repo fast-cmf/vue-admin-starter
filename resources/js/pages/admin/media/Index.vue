@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router, Head } from '@inertiajs/vue3';
+import { router, Head, usePage } from '@inertiajs/vue3';
 import type { RequestPayload } from '@inertiajs/core';
 import {
     Clapperboard,
@@ -58,8 +58,9 @@ const { assets, counts } = defineProps<{ assets: MediaAssetPaginator; counts: Me
 
 // 上传与筛选状态
 const fileInput = ref<HTMLInputElement | null>(null);
-const search = ref(new URLSearchParams(window.location.search).get('search') ?? '');
-const activeType = ref<MediaType>((new URLSearchParams(window.location.search).get('type') as MediaType) ?? 'all');
+// 筛选状态：从当前 URL 恢复（usePage().url SSR 安全，避免直接访问 window）
+const search = ref(new URLSearchParams(usePage().url.split('?')[1] ?? '').get('search') ?? '');
+const activeType = ref<MediaType>((new URLSearchParams(usePage().url.split('?')[1] ?? '').get('type') as MediaType) ?? 'all');
 
 // 弹窗状态：预览 / 裁剪 / 编辑 / 删除
 const previewing = ref<MediaAssetItem | null>(null);

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router, Head } from '@inertiajs/vue3';
+import { router, Head, usePage } from '@inertiajs/vue3';
 import type { RequestPayload } from '@inertiajs/core';
 import { Download, Eraser, ScrollText, Trash2 } from '@lucide/vue';
 import type { AcceptableValue } from 'reka-ui';
@@ -64,10 +64,10 @@ defineOptions({
 
 const { logs } = defineProps<{ logs: LoginLogPaginator }>();
 
-// 筛选状态：从当前 URL 恢复
-const search = ref(new URLSearchParams(window.location.search).get('search') ?? '');
+// 筛选状态：从当前 URL 恢复（usePage().url SSR 安全，避免直接访问 window）
+const search = ref(new URLSearchParams(usePage().url.split('?')[1] ?? '').get('search') ?? '');
 const status = ref<StatusFilter>(
-    (new URLSearchParams(window.location.search).get('status') as StatusFilter) ?? 'all',
+    (new URLSearchParams(usePage().url.split('?')[1] ?? '').get('status') as StatusFilter) ?? 'all',
 );
 
 // 选中行与弹窗状态：详情 / 删除 / 清空

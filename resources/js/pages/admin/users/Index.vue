@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, router } from "@inertiajs/vue3";
+import { Head, router, usePage } from "@inertiajs/vue3";
 import { Ban, Pencil, ShieldCheck, UserPlus, UserRound } from "@lucide/vue";
 import { ref, watch } from "vue";
 import UserController from "@/actions/App/Http/Controllers/Admin/Users/UserController";
@@ -58,9 +58,9 @@ const { users, roles } = defineProps<{
     roles: RoleOption[];
 }>();
 
-// 筛选状态：从当前 URL 恢复
+// 筛选状态：从当前 URL 恢复（usePage().url SSR 安全，避免直接访问 window）
 const search = ref(
-    new URLSearchParams(window.location.search).get("search") ?? "",
+    new URLSearchParams(usePage().url.split("?")[1] ?? "").get("search") ?? "",
 );
 
 // 弹窗与提交状态

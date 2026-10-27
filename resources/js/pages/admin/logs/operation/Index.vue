@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router, Head } from "@inertiajs/vue3";
+import { router, Head, usePage } from "@inertiajs/vue3";
 import type { RequestPayload } from "@inertiajs/core";
 import { ClipboardList, Download, Eraser, Trash2 } from "@lucide/vue";
 import type { AcceptableValue } from "reka-ui";
@@ -66,12 +66,12 @@ const { logs } = defineProps<{ logs: OperationLogPaginator }>();
 /** 状态筛选下拉的取值，'all' 表示不过滤 */
 type StatusFilter = "all" | "success" | "fail";
 
-// 筛选状态：从当前 URL 恢复
+// 筛选状态：从当前 URL 恢复（usePage().url SSR 安全，避免直接访问 window）
 const search = ref(
-    new URLSearchParams(window.location.search).get("search") ?? "",
+    new URLSearchParams(usePage().url.split("?")[1] ?? "").get("search") ?? "",
 );
 const status = ref<StatusFilter>(
-    (new URLSearchParams(window.location.search).get(
+    (new URLSearchParams(usePage().url.split("?")[1] ?? "").get(
         "status",
     ) as StatusFilter) ?? "all",
 );
